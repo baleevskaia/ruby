@@ -1,11 +1,21 @@
 require 'tax_service'
 
 class HomeController < ApplicationController
-  def index
+
+  def index; end
+
+  def calculate
     parameters = params[:_json]
     return if parameters.nil?
-
     data = ActiveSupport::JSON.decode(parameters)
+    years = get_years(data)
+    taxable_amount = get_taxable_amount(data)
+    render json: TaxService.calculate_tax(years, taxable_amount)
+  end
+
+  def calculate_ui
+    data = params[:request]
+    return if data.nil?
     years = get_years(data)
     taxable_amount = get_taxable_amount(data)
     render json: TaxService.calculate_tax(years, taxable_amount)
@@ -24,6 +34,7 @@ class HomeController < ApplicationController
   end
 
   def get_difference_in_years(first, second)
+    return 0 if second < first
     difference = second.year - first.year
     difference -= 1 if
     (first.month > second.month) ||

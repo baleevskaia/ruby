@@ -1,1 +1,30 @@
-<h1>Home#index</h1>
+<h1>Tax calculation form</h1>
+
+<%= form_tag :action => 'calculate_ui'%>
+  <div class="form-group row">
+    <%= label_tag 'BuyPrice', 'Buy Price', class:"col-sm-1 col-form-label" %>
+    <div class="col-sm-3">
+      <%= number_field "request", "BuyPrice", class: "form-control", step: 0.01, required: true %>
+    </div>
+  </div>
+  <div class="form-group row">
+    <%= label_tag 'SellPrice', 'Sell Price', class:"col-sm-1 col-form-label" %>
+    <div class="col-sm-3">
+      <%= number_field "request", "SellPrice", class: "form-control", step: 0.01, required: true %>
+    </div>
+  </div>
+  <div class="form-group row">
+    <%= label_tag 'BuyDate', 'Buy Date', class:"col-sm-1 col-form-label" %>
+    <div class="col-sm-3">
+      <%= date_field("request", "BuyDate", class: "form-control", required: true ) %>
+    </div>
+  </div>
+  <div class="form-group row">
+    <%= label_tag 'SellDate', 'Sell Date', class:"col-sm-1 col-form-label" %>
+    <div class="col-sm-3">
+      <%= date_field("request", "SellDate", class: "form-control", required: true ) %>
+    </div>
+  </div>
+  <div>
+    <%= submit_tag( "Calculate Tax", class:"btn btn-secondary" ) %>
+  </div>
