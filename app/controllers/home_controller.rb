@@ -18,7 +18,8 @@ class HomeController < ApplicationController
     return if data.nil?
     years = get_years(data)
     taxable_amount = get_taxable_amount(data)
-    render json: TaxService.calculate_tax(years, taxable_amount)
+    @result = TaxService.calculate_tax(years, taxable_amount)
+    render template: 'home/result'
   end
 
   def get_taxable_amount(data)

@@ -1,0 +1,22 @@
+<h1>Tax calculation result</h1>
+<div>
+  <label>Full years owned:</label>
+  <%= @result[:FullYearsOwned] %>
+</div>
+<div>
+  <label>Tax rate:</label>
+  <%= @result[:TaxRate] %>
+</div>
+<div>
+  <label>Tax base:</label>
+  <%= @result[:TaxBase] %>
+</div>
+<div>
+  <label>Tax deduction:</label>
+  <%= @result[:TaxDeduction] %>
+</div>
+<div>
+  <label>Tax amount:</label>
+  <%= @result[:TaxAmount] %>
+</div>
+<%= button_to 'New calculation', 'index', method: :get, class:"btn btn-secondary" %>
