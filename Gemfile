@@ -49,3 +49,9 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# Standard Auth0 requirements
+gem 'omniauth', '~> 1.3.1'
+gem 'omniauth-auth0', '~> 1.4.1'
+# Secrets should never be stored in code
+gem 'dotenv-rails', require: 'dotenv/rails-now', group: [:development, :test]
