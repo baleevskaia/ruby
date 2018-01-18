@@ -17,6 +17,10 @@ module Auth0Helper
     end
   end
 
+  def anonymous_user!
+    redirect_to controller: 'home', action: 'index' if user_signed_in?
+  end
+
   # What's the current_user?
   # @return [Hash]
   def current_user

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  get 'public_pages/home'
-
+  get 'public_pages/login'
+  get 'public_pages/logout'
   get 'auth0/callback'
 
   get 'auth0/failure'

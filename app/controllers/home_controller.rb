@@ -2,7 +2,7 @@ require 'tax_service'
 
 class HomeController < ApplicationController
 
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:calculate]
 
   def index
     @user = current_user
