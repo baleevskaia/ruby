@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  get 'public_pages/login'
-  get 'public_pages/logout'
+  get 'authentication/login'
+  get 'authentication/logout'
   get 'auth0/callback'
 
   get 'auth0/failure'
@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   post 'home/calculate'
   post 'home/calculate_ui'
   # root 'home#index'
-  root 'public_pages#login'
+  root 'authentication#login'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   # Auth0 routes for authentication

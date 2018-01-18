@@ -1,4 +1,4 @@
-<%= button_to 'Logout', {:controller => 'public_pages', :action => 'logout'}, method: :get, class:"btn btn-info", style:"float:right" %>
+<%= button_to 'Logout', {:controller => 'authentication', :action => 'logout'}, method: :get, class:"btn btn-info", style:"float:right" %>
 <h1>Tax calculation form</h1>
 
 <%= form_tag :action => 'calculate_ui'%>

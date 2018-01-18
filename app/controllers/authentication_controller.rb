@@ -1,4 +1,4 @@
-class PublicPagesController < ApplicationController
+class AuthenticationController < ApplicationController
   before_action :anonymous_user!, only: [:login]
   before_action :authenticate_user!, only: [:logout]
 
