@@ -8,7 +8,7 @@
         '<%= Rails.application.secrets.auth0_domain %>', {
             container: 'root',
             auth: {
-                redirectUrl: 'http://rubytask.com:3000/auth/auth0/callback',
+                redirectUrl: 'http://localhost:3000/auth/auth0/callback',
                 responseType: 'code',
                 params: {
                     scope: 'openid email' // Learn about scopes: https://auth0.com/docs/scopes

@@ -25,6 +25,6 @@ module Auth0Helper
 
   # @return the path to the login page
   def login_path
-    'publicPages/login'
+    { controller: 'public_pages', action: 'login' }
   end
 end

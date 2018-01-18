@@ -5,13 +5,13 @@ class Auth0Controller < ApplicationController
     session[:userinfo] = request.env['omniauth.auth']
 
     # Redirect to the URL you want after successful auth
-    redirect_to 'home/index'
+    redirect_to controller: 'home', action: 'index'
   end
 
   # This handles authentication failures
   def failure
     @error_type = request.params['error_type']
     @error_msg = request.params['error_msg']
-    # TODO show a failure page or redirect to an error page
+    # TODO: show a failure page or redirect to an error page
   end
 end
